@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
+    "body-leading-blank": [
+      2,
+      "always"
+    ],
+    "footer-leading-blank": [
+      2,
+      "always"
+    ],
+    "type-enum": [
+      2,
+      "always",
+      [
+        "feature",
+        "fix",
+        "docs",
+        "style",
+        "test",
+        "refactor",
+        "revert",
+        "ci",
+        "perf",
+        "chore"
+      ]
+    ]
+  }
+}
