@@ -15,7 +15,16 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "prettier"
       ],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "overrides": {
+              "constructors": "no-public"
+            }
+          }
+        ]
+      }
     },
     {
       "files": [
