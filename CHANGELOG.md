@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/lodygin/ngx-development-kit/compare/v1.1.0...v1.2.0) (2023-02-21)
+
+
+### Features
+
+* **pipes:** create call pipe ([dd0ad0e](https://github.com/lodygin/ngx-development-kit/commit/dd0ad0ea694e04fdbc9a96326b63a4b158f4ed5b))
+
+
+### Bug Fixes
+
+* remove paths from tsconfig ([ceb4479](https://github.com/lodygin/ngx-development-kit/commit/ceb4479d96cbc47fc11eeaf168a6c52ac1c9571b))
+
 ## [1.1.0](https://github.com/lodygin/ngx-development-kit/compare/v1.0.0...v1.1.0) (2023-02-21)
 
 
