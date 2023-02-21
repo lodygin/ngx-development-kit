@@ -6,10 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
-    "paths": {
-      "@root/*": ["./projects/ngx-development-kit/src/lib/*"]
-    }
+    "types": []
   },
   "exclude": [
     "**/*.spec.ts"
