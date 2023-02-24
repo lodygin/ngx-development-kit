@@ -7,7 +7,7 @@ describe('CallPipe', () => {
     pipe = new CallPipe();
   });
 
-  it('should create an instance', () => {
+  it('should be created', () => {
     expect(pipe).toBeTruthy();
   });
 
