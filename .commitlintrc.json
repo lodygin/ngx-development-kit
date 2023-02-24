@@ -24,7 +24,8 @@
         "revert",
         "ci",
         "perf",
-        "chore"
+        "chore",
+        "build"
       ]
     ]
   }
