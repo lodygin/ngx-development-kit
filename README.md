@@ -27,7 +27,7 @@ quickly and easily integrate these features into your application.
 ## Installation
 
 ```bash
-npm i ngx-development-kit
+npm install ngx-development-kit --save
 ```
 
 ## Features
