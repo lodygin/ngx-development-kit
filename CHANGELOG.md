@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/lodygin/ngx-development-kit/compare/v1.2.0...v1.3.0) (2023-02-24)
+
+
+### Features
+
+* **services:** create destroy service ([ee6833a](https://github.com/lodygin/ngx-development-kit/commit/ee6833a9f264f6e070e5ea95554ff62e716c992b))
+
 ## [1.2.0](https://github.com/lodygin/ngx-development-kit/compare/v1.1.0...v1.2.0) (2023-02-21)
 
 
