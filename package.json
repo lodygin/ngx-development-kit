@@ -33,7 +33,7 @@
     "test:ci": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless",
     "lint": "ng lint",
     "package:sync": "node scripts/sync-package-keys.js",
-    "docs:copy": "cp LICENSE CHANGELOG.md README.md dist/ngx-development-kit/",
+    "docs:copy": "cp LICENSE README.md dist/ngx-development-kit/",
     "publish:prepare": "npm run docs:copy & npm run package:sync"
   },
   "dependencies": {
