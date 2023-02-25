@@ -47,7 +47,7 @@ This can help to improve performance and make your code more flexible and reusab
 
 ```ts
 import { Component } from '@angular/core';
-import { CallPipe } from 'ngx-development-kit'
+import { CallPipe } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
@@ -68,7 +68,7 @@ With context:
 
 ```ts
 import { Component } from '@angular/core';
-import { CallPipe } from 'ngx-development-kit'
+import { CallPipe } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
