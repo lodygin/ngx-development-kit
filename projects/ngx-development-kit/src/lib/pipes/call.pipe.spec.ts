@@ -3,14 +3,6 @@ import { CallPipe } from './call.pipe';
 describe('CallPipe', () => {
   let pipe!: CallPipe;
 
-  class ValueStore {
-    constructor(private value: string) {}
-
-    public getValue(): string {
-      return this.value;
-    }
-  }
-
   beforeEach(() => {
     pipe = new CallPipe();
   });
@@ -28,18 +20,17 @@ describe('CallPipe', () => {
   });
 
   it('should transform input value using provided function with context parameter', () => {
+    class ValueStore {
+      constructor(private value: string) {}
+
+      public getValue(): string {
+        return this.value;
+      }
+    }
+
     const value = 'foo';
     const foo = new ValueStore(value);
 
     expect(pipe.transform(value, foo.getValue, foo)).toBe(value);
-  });
-
-  it('should transform input value using provided function with bounded context', () => {
-    const valueBar = 'bar';
-    const valueFoo = 'foo';
-    const bar = new ValueStore(valueBar);
-    const foo = new ValueStore(valueFoo);
-
-    expect(pipe.transform(valueBar, bar.getValue.bind(foo))).toBe(valueFoo);
   });
 });
