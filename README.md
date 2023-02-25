@@ -87,28 +87,7 @@ export class AppComponent {
 }
 ```
 
-You can also use the `.bind(this)` method instead of the context parameter in the `CallPipe`:
-
-```ts
-import { Component } from '@angular/core';
-import { CallPipe } from 'ngx-development-kit'
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CallPipe],
-  template: `
-    <div>{{ value | call : raise.bind(this) }}</div>
-  `,
-})
-export class AppComponent {
-  private power = 5;
-
-  public raise(value: number): number {
-    return value * this.power;
-  }
-}
-```
+> **NOTE**: Avoid using `.bind(this)`. It causes the method to be called during every change detection cycle.
 
 ### Services
 
@@ -146,7 +125,8 @@ export class UnknownComponent implements OnInit {
 ```
 
 > **NOTE**: When using the `DestroyService`, it is important to provide the service in an array of a component
-> providers. This can be done by adding the `DestroyService` to the providers array in the `@Component` decorator for each
+> providers. This can be done by adding the `DestroyService` to the providers array in the `@Component` decorator for
+> each
 > component that uses it.
 >
 > `@Component({..., providers: [..., DestroyService]})`
