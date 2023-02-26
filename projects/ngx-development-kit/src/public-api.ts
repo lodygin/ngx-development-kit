@@ -4,3 +4,4 @@
 
 export { CallPipe } from './lib/pipes';
 export { DestroyService } from './lib/services';
+export { NgxLetDirective } from './lib/directives';
