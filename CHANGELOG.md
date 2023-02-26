@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/lodygin/ngx-development-kit/compare/v1.3.0...v1.4.0) (2023-02-26)
+
+
+### Features
+
+* **directives:** create ngx-let directive ([f9ea92f](https://github.com/lodygin/ngx-development-kit/commit/f9ea92f7fdfd86ca83b23ade3fe89bdfae737edd))
+
 ## [1.3.0](https://github.com/lodygin/ngx-development-kit/compare/v1.2.0...v1.3.0) (2023-02-24)
 
 
