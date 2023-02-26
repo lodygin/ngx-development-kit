@@ -22,6 +22,8 @@ quickly and easily integrate these features into your application.
     * [Call](#call)
   * [Services](#services)
     * [Destroy](#destroy)
+  * [Directives](#directives)
+    * [NgxLet](#ngxlet)
 * [License](#license)
 
 ## Installation
@@ -130,6 +132,98 @@ export class UnknownComponent implements OnInit {
 > component that uses it.
 >
 > `@Component({..., providers: [..., DestroyService]})`
+
+### Directives
+
+#### NgxLet
+
+###### Description
+
+The `NgxLetDirective` is an Angular directive that simplifies template binding by accessing to the value of a given input
+variable. It's particularly useful when working with data using the `AsyncPipe`. The directive defines a class called
+`NgxLetContext`, which provides access to the value of the `*ngxLet` input variable within the template.
+
+###### Usage
+
+```ts
+import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { of } from 'rxjs';
+import { NgxLetDirective } from 'ngx-development-kit';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxLetDirective, AsyncPipe],
+  template: `
+    <div *ngxLet="user$ | async as user">
+      {{ user!.firstName }} {{ user!.lastName }}
+    </div>
+  `,
+})
+export class AppComponent {
+  public user$ = of({
+    firstName: 'alexander',
+    lastName: 'lodygin',
+  });
+}
+```
+
+or:
+
+```ts
+import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { of } from 'rxjs';
+import { NgxLetDirective } from 'ngx-development-kit';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxLetDirective, AsyncPipe],
+  template: `
+    <div *ngxLet="user$ | async; let user">
+      {{ user!.firstName }} {{ user!.lastName }}
+    </div>
+  `,
+})
+export class AppComponent {
+  public user$ = of({
+    firstName: 'alexander',
+    lastName: 'lodygin',
+  });
+}
+```
+
+A use case with `ng-template`:
+
+```ts
+import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { of } from 'rxjs';
+import { NgxLetDirective } from 'ngx-development-kit';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxLetDirective, AsyncPipe],
+  template: `
+    <ng-template [ngxLet]="user$ | async" let-user>
+      {{ user!.firstName }} {{ user!.lastName }}
+    </ng-template>
+  `,
+})
+export class AppComponent {
+  public user$ = of({
+    firstName: 'alexander',
+    lastName: 'lodygin',
+  });
+}
+```
+
+> **NOTE**: When using the `NgxLetDirective`, especially with [strict](https://www.typescriptlang.org/tsconfig#strict) type checking, it's important to remember to use the
+> non-null assertion operator (`!.`) or optional chaining operator (`?.`) when working with the `AsyncPipe` and objects. This helps to
+> avoid errors related to null or undefined values.
 
 ## License
 
