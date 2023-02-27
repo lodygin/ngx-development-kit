@@ -1,1 +1,1 @@
-export { DestroyService } from './destroy.service';
+export { NgxDestroyService } from './ngx-destroy.service';
