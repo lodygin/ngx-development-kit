@@ -9,6 +9,14 @@
         "*.ts"
       ],
       "rules": {
+        "@angular-eslint/pipe-prefix": [
+          "error",
+          {
+            "prefixes": [
+              "ngx"
+            ]
+          }
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
