@@ -19,7 +19,7 @@ quickly and easily integrate these features into your application.
 * [Installation](#installation)
 * [Features](#features)
   * [Pipes](#pipes)
-    * [Call](#call)
+    * [NgxCall](#ngxcall)
   * [Services](#services)
     * [NgxDestroy](#ngxdestroy)
   * [Directives](#directives)
@@ -36,11 +36,11 @@ npm install ngx-development-kit --save
 
 ### Pipes
 
-#### Call
+#### NgxCall
 
 ###### Description
 
-The `CallPipe` in Angular allows you to call a function with a specific input value and context.
+The `NgxCallPipe` in Angular allows you to call a function with a specific input value and context.
 By using this pipe, you can reduce the number of computations in your application by only executing the function when
 there is a change to the input value or reference.
 This can help to improve performance and make your code more flexible and reusable.
@@ -49,14 +49,14 @@ This can help to improve performance and make your code more flexible and reusab
 
 ```ts
 import { Component } from '@angular/core';
-import { CallPipe } from 'ngx-development-kit';
+import { NgxCallPipe } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CallPipe],
+  imports: [NgxCallPipe],
   template: `
-    <div>{{ value | call : double }}</div>
+    <div>{{ value | ngxCall : double }}</div>
   `,
 })
 export class AppComponent {
@@ -70,14 +70,14 @@ With context:
 
 ```ts
 import { Component } from '@angular/core';
-import { CallPipe } from 'ngx-development-kit';
+import { NgxCallPipe } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CallPipe],
+  imports: [NgxCallPipe],
   template: `
-    <div>{{ value | call : raise : this }}</div>
+    <div>{{ value | ngxCall : raise : this }}</div>
   `,
 })
 export class AppComponent {
