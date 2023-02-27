@@ -21,7 +21,7 @@ quickly and easily integrate these features into your application.
   * [Pipes](#pipes)
     * [Call](#call)
   * [Services](#services)
-    * [Destroy](#destroy)
+    * [NgxDestroy](#ngxdestroy)
   * [Directives](#directives)
     * [NgxLet](#ngxlet)
 * [License](#license)
@@ -93,11 +93,11 @@ export class AppComponent {
 
 ### Services
 
-#### Destroy
+#### NgxDestroy
 
 ###### Description
 
-The `DestroyService` is an Angular service that extends the `ReplaySubject` class
+The `NgxDestroyService` is an Angular service that extends the `ReplaySubject` class
 from [RxJS](https://rxjs.dev/api/index/class/ReplaySubject) and emits a value when a component is being destroyed. This
 can be used to complete any observables that the component has created and prevent memory leaks.
 
@@ -106,16 +106,16 @@ can be used to complete any observables that the component has created and preve
 ```ts
 import { Component, OnInit } from '@angular/core';
 import { interval, takeUntil } from 'rxjs';
-import { DestroyService } from 'ngx-development-kit';
+import { NgxDestroyService } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-unknown',
   standalone: true,
-  providers: [DestroyService],
+  providers: [NgxDestroyService],
   template: '',
 })
 export class UnknownComponent implements OnInit {
-  constructor(private readonly destroy$: DestroyService) {
+  constructor(private readonly destroy$: NgxDestroyService) {
   }
 
   public ngOnInit(): void {
@@ -126,12 +126,12 @@ export class UnknownComponent implements OnInit {
 }
 ```
 
-> **NOTE**: When using the `DestroyService`, it is important to provide the service in an array of a component
-> providers. This can be done by adding the `DestroyService` to the providers array in the `@Component` decorator for
+> **NOTE**: When using the `NgxDestroyService`, it is important to provide the service in an array of a component
+> providers. This can be done by adding the `NgxDestroyService` to the providers array in the `@Component` decorator for
 > each
 > component that uses it.
 >
-> `@Component({..., providers: [..., DestroyService]})`
+> `@Component({..., providers: [..., NgxDestroyService]})`
 
 ### Directives
 

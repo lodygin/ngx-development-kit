@@ -1,10 +1,10 @@
-import { DestroyService } from './destroy.service';
+import { NgxDestroyService } from './ngx-destroy.service';
 
-describe('DestroyService', () => {
-  let service: DestroyService;
+describe('NgxDestroyService', () => {
+  let service: NgxDestroyService;
 
   beforeEach(() => {
-    service = new DestroyService();
+    service = new NgxDestroyService();
   });
 
   it('should be created', () => {
