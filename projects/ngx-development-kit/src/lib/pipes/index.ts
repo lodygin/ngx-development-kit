@@ -1,1 +1,1 @@
-export { CallPipe } from './call.pipe';
+export { NgxCallPipe } from './ngx-call.pipe';

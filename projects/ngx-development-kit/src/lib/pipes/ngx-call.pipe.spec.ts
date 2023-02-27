@@ -1,10 +1,10 @@
-import { CallPipe } from './call.pipe';
+import { NgxCallPipe } from './ngx-call.pipe';
 
-describe('CallPipe', () => {
-  let pipe!: CallPipe;
+describe('NgxCallPipe', () => {
+  let pipe!: NgxCallPipe;
 
   beforeEach(() => {
-    pipe = new CallPipe();
+    pipe = new NgxCallPipe();
   });
 
   it('should be created', () => {
