@@ -13,10 +13,8 @@ describe('NgxCallPipe', () => {
 
   it('should transform input value using provided function', () => {
     const double = (value: number): number => value * 2;
-    const inputValue = 2;
-    const outputValue = double(2);
 
-    expect(pipe.transform(inputValue, double)).toBe(outputValue);
+    expect(pipe.transform(2, double)).toBe(4);
   });
 
   it('should transform input value using provided function with context parameter', () => {
