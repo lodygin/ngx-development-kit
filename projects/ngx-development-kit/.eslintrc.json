@@ -21,7 +21,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngx",
+            "prefix": ["ngx", "ng"],
             "style": "camelCase"
           }
         ],
