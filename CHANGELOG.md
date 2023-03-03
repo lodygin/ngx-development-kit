@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/lodygin/ngx-development-kit/compare/v2.0.0...v2.1.0) (2023-03-03)
+
+
+### Features
+
+* **directives:** create ngx-track-by directive ([9aa8bc6](https://github.com/lodygin/ngx-development-kit/commit/9aa8bc6eb2f304176d8b8162e8aab2eee658a78a))
+
 ## [2.0.0](https://github.com/lodygin/ngx-development-kit/compare/v1.4.0...v2.0.0) (2023-02-27)
 
 
