@@ -2,14 +2,14 @@
 
 ### What is it?
 
-**ngx-development-kit** is a library of tools designed to accelerate the development of Angular applications.
+ngx-development-kit is a library of tools designed to accelerate the development of Angular applications.
 
 ### Why might you need it?
 
 Developing Angular applications often involves implementing common features like destroy services, memoization pipes, and track-by-property directives.
-The purpose of the **ngx-development-kit** library is collecting these tools in one place and makes them available as ready-to-use utilities.
+The purpose of the ngx-development-kit library is collecting these tools in one place and makes them available as ready-to-use utilities.
 This can significantly reduce the time and effort required to develop applications.
-Instead of copying and pasting solutions from one project to another, you can use the **ngx-development-kit** library to quickly and easily integrate these features into your application.
+Instead of copying and pasting solutions from one project to another, you can use the ngx-development-kit library to quickly and easily integrate these features into your application.
 
 ## Table of Contents
 
@@ -22,6 +22,9 @@ Instead of copying and pasting solutions from one project to another, you can us
   - [Directives](#directives)
     - [NgxLet](#ngxlet)
     - [NgxTrackBy](#ngxtrackby)
+    - [NgxEmpty](#ngxempty)
+  - [Modules](#modules)
+    - [NgxFor](#ngxfor)
 - [License](#license)
 
 ## Installation
@@ -36,13 +39,13 @@ npm install ngx-development-kit --save
 
 #### NgxCall
 
-###### Description
+##### Description
 
 The `NgxCallPipe` in Angular allows you to call a function with a specific input value and context.
 By using this pipe, you can reduce the number of computations in your application by only executing the function when there is a change to the input value or reference.
 This can help to improve performance and make your code more flexible and reusable.
 
-###### Usage
+##### Usage
 
 ```ts
 import { Component } from '@angular/core';
@@ -92,12 +95,12 @@ export class AppComponent {
 
 #### NgxDestroy
 
-###### Description
+##### Description
 
 The `NgxDestroyService` is an Angular service that extends the `ReplaySubject` class from [RxJS](https://rxjs.dev/api/index/class/ReplaySubject) and emits a value when a component is being destroyed.
 This can be used to complete any observables that the component has created and prevent memory leaks.
 
-###### Usage
+##### Usage
 
 ```ts
 import { Component, OnInit } from '@angular/core';
@@ -131,12 +134,12 @@ export class UnknownComponent implements OnInit {
 
 #### NgxLet
 
-###### Description
+##### Description
 
 The `NgxLetDirective` is an Angular directive that simplifies template binding by accessing to the value of a given input variable. 
 It's particularly useful when working with data using the `AsyncPipe`. The directive defines a class called `NgxLetContext`, which provides access to the value of the `*ngxLet` input variable within the template.
 
-###### Usage
+##### Usage
 
 ```ts
 import { Component } from '@angular/core';
@@ -219,13 +222,13 @@ export class AppComponent {
 
 #### NgxTrackBy
 
-###### Description
+##### Description
 
 This is an Angular directive called `NgxTrackByDirective` that enhances the `NgForOf` directive from the [@angular/common](https://www.npmjs.com/package/@angular/common) library.
 The purpose of this directive is to provide a custom `trackBy` function to the `NgForOf` directive.
 The `trackBy` function is used to improve the performance of the `NgForOf` directive by identifying which items have changed in the iterable.
 
-###### Usage
+##### Usage
 
 ```ts
 import { Component } from '@angular/core';
@@ -237,7 +240,7 @@ import { NgxTrackByDirective } from 'ngx-development-kit';
   standalone: true,
   imports: [NgForOf, NgxTrackByDirective],
   template: `
-    <ul *ngFor="let user of users; ngxTrackBy: 'id'">
+    <ul *ngFor="let user of users; ngxTrackBy 'id'">
       <li>{{ user.name }}</li>
     </ul>
   `,
@@ -252,33 +255,52 @@ export class AppComponent {
 }
 ```
 
-or:
+#### NgxEmpty
+
+##### Description
+
+This is an Angular directive called `NgxEmptyDirective` which is used to display a template when an `NgFor` loop has no data to render.
+
+##### Usage
+
+Only the paragraph with the text "No Data" will be shown:
 
 ```ts
 import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
-import { NgxTrackByDirective } from 'ngx-development-kit';
+import { Observable, of } from 'rxjs';
+import { NgxEmptyDirective } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgForOf, NgxTrackByDirective],
+  imports: [NgForOf, NgxEmptyDirective],
   template: `
-    <ul *ngFor="let user of users; ngxTrackBy('id')">
-      <li>{{ user.name }}</li>
-    </ul>
+      <ng-container *ngFor="let user of (users$ | async)!; ngxEmpty emptyRef">
+        <p>{{ user.name }}</p>
+      </ng-container>
+
+      <ng-template #emptyRef>
+        <p>No data</p>
+      </ng-template>
   `,
 })
 export class AppComponent {
-  public users = [
-    { id: '1', name: 'David' },
-    { id: '2', name: 'Mark' },
-    { id: '3', name: 'Bennett' },
-    { id: '4', name: 'Oliver' },
-  ];
+  public users$ = of<Record<'id' | 'name', string>[]>([]);
 }
 ```
+
+### Modules
+
+#### NgxFor
+
+##### Description
+
+Module exports:
+
+- [NgxTrackBy](#ngxtrackby)
+- [NgxEmpty](#ngxempty)
 
 ## License
 
-**ngx-development-kit** is released under the [MIT License](https://github.com/lodygin/ngx-development-kit/blob/main/LICENSE).
+ngx-development-kit is released under the [MIT License](https://github.com/lodygin/ngx-development-kit/blob/main/LICENSE).
