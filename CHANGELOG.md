@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/lodygin/ngx-development-kit/compare/v2.1.0...v2.2.0) (2023-03-05)
+
+
+### Features
+
+* **directives:** create ngx-empty directive ([affdf55](https://github.com/lodygin/ngx-development-kit/commit/affdf555e681d0b86101a052f2a9a27b8073f8e5))
+* **modules:** create ngx-for module ([4e08cb5](https://github.com/lodygin/ngx-development-kit/commit/4e08cb59a78c97f0d0af26b7f1d0fa2851aebd10))
+
 ## [2.1.0](https://github.com/lodygin/ngx-development-kit/compare/v2.0.0...v2.1.0) (2023-03-03)
 
 
