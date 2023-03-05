@@ -4,4 +4,5 @@
 
 export { NgxCallPipe } from './lib/pipes';
 export { NgxDestroyService } from './lib/services';
-export { NgxLetDirective, NgxTrackByDirective } from './lib/directives';
+export { NgxLetDirective, NgxTrackByDirective, NgxEmptyDirective } from './lib/directives';
+export { NgxForModule } from './lib/modules';
