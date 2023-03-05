@@ -267,22 +267,22 @@ Only the paragraph with the text "No Data" will be shown:
 
 ```ts
 import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { AsyncPipe, NgForOf } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { NgxEmptyDirective } from 'ngx-development-kit';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgForOf, NgxEmptyDirective],
+  imports: [NgForOf, AsyncPipe, NgxEmptyDirective],
   template: `
-      <ng-container *ngFor="let user of (users$ | async)!; ngxEmpty emptyRef">
-        <p>{{ user.name }}</p>
-      </ng-container>
+    <ng-container *ngFor="let user of (users$ | async)!; ngxEmpty emptyRef">
+      <p>{{ user.name }}</p>
+    </ng-container>
 
-      <ng-template #emptyRef>
-        <p>No data</p>
-      </ng-template>
+    <ng-template #emptyRef>
+      <p>No data</p>
+    </ng-template>
   `,
 })
 export class AppComponent {
