@@ -295,7 +295,7 @@ export class AppComponent {
 
 ##### Description
 
-The `NgxRepeatDirective` is an Angular directive which produces a repeating element according to the value of the ngxRepeat input. By receiving a number, the `ngxRepeat` input generates the specified number of repetitions for the associated element, resulting in its duplication.
+The `NgxRepeatDirective` is an Angular directive which produces a repeating element according to the value of the `ngxRepeat` input. By receiving a number, the `ngxRepeat` input generates the specified number of repetitions for the associated element, resulting in its duplication.
 
 ##### Usage
 
