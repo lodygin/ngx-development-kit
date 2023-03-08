@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AsyncPipe, NgForOf } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
 
@@ -29,7 +28,7 @@ describe('NgxEmptyDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [NgForOf, AsyncPipe, NgxEmptyDirective],
+      imports: [NgxEmptyDirective],
     }).compileComponents();
   });
 

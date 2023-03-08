@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgForOf } from '@angular/common';
 import { By } from '@angular/platform-browser';
 
 import { NgxTrackByDirective } from './ngx-track-by.directive';
@@ -28,7 +27,7 @@ describe('NgxTrackByDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TestComponent],
-      imports: [NgForOf, NgxTrackByDirective],
+      imports: [NgxTrackByDirective],
     }).compileComponents();
   });
 
