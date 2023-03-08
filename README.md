@@ -23,6 +23,7 @@ Instead of copying and pasting solutions from one project to another, you can us
     - [NgxLet](#ngxlet)
     - [NgxTrackBy](#ngxtrackby)
     - [NgxEmpty](#ngxempty)
+    - [NgxRepeat](#ngxrepeat)
   - [Modules](#modules)
     - [NgxFor](#ngxfor)
 - [License](#license)
@@ -288,6 +289,29 @@ import { NgxEmptyDirective } from 'ngx-development-kit';
 export class AppComponent {
   public users$ = of<Record<'id' | 'name', string>[]>([]);
 }
+```
+
+#### NgxRepeat
+
+##### Description
+
+The `NgxRepeatDirective` is an Angular directive which produces a repeating element according to the value of the ngxRepeat input. By receiving a number, the `ngxRepeat` input generates the specified number of repetitions for the associated element, resulting in its duplication.
+
+##### Usage
+
+```ts
+import { Component } from '@angular/core';
+import { NgxRepeatDirective } from 'ngx-development-kit';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxRepeatDirective],
+  template: `
+    <div *ngxRepeat="5">Hello World!</div>
+  `,
+})
+export class AppComponent {}
 ```
 
 ### Modules
