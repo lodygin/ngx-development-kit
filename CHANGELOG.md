@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/lodygin/ngx-development-kit/compare/v2.2.0...v2.3.0) (2023-03-08)
+
+
+### Features
+
+* **directives:** create ngx-repeat directive ([f53dda2](https://github.com/lodygin/ngx-development-kit/commit/f53dda22cd064a0d5b93afff0f10963caea54e99))
+
 ## [2.2.0](https://github.com/lodygin/ngx-development-kit/compare/v2.1.0...v2.2.0) (2023-03-05)
 
 
