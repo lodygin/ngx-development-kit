@@ -17,6 +17,7 @@ Instead of copying and pasting solutions from one project to another, you can us
 - [Features](#features)
   - [Pipes](#pipes)
     - [NgxCall](#ngxcall)
+    - [NgxSafe](#ngxsafe)
   - [Services](#services)
     - [NgxDestroy](#ngxdestroy)
   - [Directives](#directives)
@@ -42,7 +43,7 @@ npm install ngx-development-kit --save
 
 ##### Description
 
-The `NgxCallPipe` in Angular allows you to call a function with a specific input value and context.
+The `NgxCallPipe` allows you to call a function with a specific input value and context.
 By using this pipe, you can reduce the number of computations in your application by only executing the function when there is a change to the input value or reference.
 This can help to improve performance and make your code more flexible and reusable.
 
@@ -91,6 +92,31 @@ export class AppComponent {
 ```
 
 > **NOTE**: Avoid using `.bind(this)`. It causes the method to be called during every change detection cycle.
+
+#### NgxSafe
+
+##### Description
+
+This is an Angular pipe that uses `DomSanitizer` to bypass security checks for certain types of values (`html`, `style`, `url`, and `resourceUrl`). The pipe is named `ngxSafe` and can be used in templates to safely display values of those types without Angular blocking them for security reasons.
+
+##### Usage
+
+```ts
+import { Component } from '@angular/core';
+import { NgxSafePipe } from 'ngx-development-kit';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxSafePipe],
+  template: `
+    <iframe [src]="resourceUrl | ngxSafe: 'resourceUrl'" width="640" height="390"></iframe>
+  `,
+})
+export class AppComponent {
+  public resourceUrl = 'https://www.youtube.com/embed/K6FA6f8fohk';
+}
+```
 
 ### Services
 
@@ -217,9 +243,6 @@ export class AppComponent {
   });
 }
 ```
-
-> **NOTE**: When using the `NgxLetDirective`, especially with [strict](https://www.typescriptlang.org/tsconfig#strict) type checking, it's important to remember to use the non-null assertion operator (`!.`) or optional chaining operator (`?.`) when working with the `AsyncPipe` and objects.
-> This helps to avoid errors related to null or undefined values.
 
 #### NgxTrackBy
 
