@@ -18,7 +18,12 @@
     "pipe",
     "service",
     "directive",
-    "RxJS"
+    "RxJS",
+    "destroy",
+    "let",
+    "module",
+    "trackBy",
+    "ngFor"
   ],
   "workspaces": [
     "dist/ngx-development-kit"
