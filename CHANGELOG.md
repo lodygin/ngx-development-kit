@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/lodygin/ngx-development-kit/compare/v2.3.0...v2.4.0) (2023-03-17)
+
+
+### Features
+
+* **pipes:** create ngx-safe pipe ([ea6268e](https://github.com/lodygin/ngx-development-kit/commit/ea6268e0dd7ac15224acf6803839a8125b95a8a8))
+
 ## [2.3.0](https://github.com/lodygin/ngx-development-kit/compare/v2.2.0...v2.3.0) (2023-03-08)
 
 
