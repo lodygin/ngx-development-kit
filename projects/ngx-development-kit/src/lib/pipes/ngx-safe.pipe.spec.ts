@@ -6,12 +6,11 @@ describe('NgxSafePipe', () => {
   let sanitizer: DomSanitizer;
 
   beforeEach(() => {
-    sanitizer = jasmine.createSpyObj('DomSanitizer', [
-      'bypassSecurityTrustHtml',
-      'bypassSecurityTrustStyle',
-      'bypassSecurityTrustUrl',
-      'bypassSecurityTrustResourceUrl',
-    ]);
+    sanitizer = {} as DomSanitizer;
+    sanitizer.bypassSecurityTrustHtml = jest.fn();
+    sanitizer.bypassSecurityTrustStyle = jest.fn();
+    sanitizer.bypassSecurityTrustUrl = jest.fn();
+    sanitizer.bypassSecurityTrustResourceUrl = jest.fn();
     pipe = new NgxSafePipe(sanitizer);
   });
 

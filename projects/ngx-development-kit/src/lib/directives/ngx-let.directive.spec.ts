@@ -60,7 +60,7 @@ describe('NgxLetDirective', () => {
           new NgxLetDirective<unknown>(mockViewContainerRef, mockTemplateRef),
           {},
         ),
-      ).toBeTrue();
+      ).toBeTruthy();
     });
   });
 
