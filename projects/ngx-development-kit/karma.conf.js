@@ -26,10 +26,10 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
-      file: 'coverage.xml',
       subdir: '.',
       reporters: [
-        {type: 'cobertura'}
+        {type: 'lcov'},
+        {type: 'text-summary'}
       ],
     },
     reporters: ['progress', 'kjhtml'],
