@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/lodygin/ngx-development-kit/compare/v2.4.0...v2.5.0) (2023-03-19)
+
+
+### Features
+
+* **validators:** create required-string validator ([8135e6a](https://github.com/lodygin/ngx-development-kit/commit/8135e6ae83c339a4a2fe2e11b8f77017428e98c0))
+
 ## [2.4.0](https://github.com/lodygin/ngx-development-kit/compare/v2.3.0...v2.4.0) (2023-03-17)
 
 
