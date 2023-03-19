@@ -11,3 +11,4 @@ export {
   NgxRepeatDirective,
 } from './lib/directives';
 export { NgxForModule } from './lib/modules';
+export { NgxValidators } from './lib/validators';
