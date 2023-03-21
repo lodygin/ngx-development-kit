@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/lodygin/ngx-development-kit/compare/v2.5.0...v3.0.0) (2023-03-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* update peerDependencies
+
+### Build System
+
+* update peerDependencies ([c0a93e1](https://github.com/lodygin/ngx-development-kit/commit/c0a93e1e8c1658363c51aca45443fca6ae8e68f6))
+
 ## [2.5.0](https://github.com/lodygin/ngx-development-kit/compare/v2.4.0...v2.5.0) (2023-03-19)
 
 
