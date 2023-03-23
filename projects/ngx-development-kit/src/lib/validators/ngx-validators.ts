@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 
-import isUrlValidator from 'validator/es/lib/isUrl';
+import isUrlValidator from 'validator/es/lib/isURL';
 
 function isEmptyString(value: unknown): boolean {
   if (typeof value !== 'string') {
