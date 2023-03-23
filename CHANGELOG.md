@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/lodygin/ngx-development-kit/compare/v3.0.0...v3.1.0) (2023-03-23)
+
+
+### Features
+
+* **validators:** create url validator ([97865d9](https://github.com/lodygin/ngx-development-kit/commit/97865d9657ff21ffdc11eb6cad1ae2d8ba3e6d70))
+* **validators:** update behavior of the requiredString validator ([f0ec49d](https://github.com/lodygin/ngx-development-kit/commit/f0ec49d473b3831987d609d1ec9009f4c971e3fa))
+
+
+### Bug Fixes
+
+* **validators:** update path for the isUrlValidator ([9599022](https://github.com/lodygin/ngx-development-kit/commit/95990225b59884b392e8a55afcea6ae80ff663ce))
+
 ## [3.0.0](https://github.com/lodygin/ngx-development-kit/compare/v2.5.0...v3.0.0) (2023-03-21)
 
 
