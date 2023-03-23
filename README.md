@@ -29,6 +29,7 @@ Instead of copying and pasting solutions from one project to another, you can us
     - [NgxFor](#ngxfor)
   - [NgxValidators](#ngxvalidators)
     - [requiredString](#requiredstring)
+    - [url](#url)
 - [License](#license)
 
 ## Installation
@@ -356,10 +357,20 @@ Module exports:
 
 ##### Description
 
-The validator function requires a non-empty value for an Angular form control, while ignoring any leading or trailing spaces in the value.
+The validator requires a non-empty value for the control, while ignoring any leading or trailing spaces in the value.
 
 ```ts
 new FormControl('', NgxValidators.requiredString)
+```
+
+#### url
+
+##### Description
+
+The validator checks if the control value is a valid URL.
+
+```ts
+new FormControl('', NgxValidators.url)
 ```
 
 ## License
