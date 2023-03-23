@@ -3,10 +3,11 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 import isUrlValidator from 'validator/es/lib/isUrl';
 
 function isEmptyString(value: unknown): boolean {
-  return (
-    value == null ||
-    ((typeof value === 'string' || Array.isArray(value)) && value.toString().trim().length === 0)
-  );
+  if (typeof value !== 'string') {
+    return true;
+  }
+
+  return value.trim().length === 0;
 }
 
 function isURL(value: unknown): boolean {
