@@ -21,26 +21,20 @@ describe('NgxValidators', () => {
       expect(NgxValidators.requiredString(new FormControl('not empty'))).toBeNull();
     });
 
-    it('should accept zero as valid', () => {
-      expect(NgxValidators.requiredString(new FormControl(0))).toBeNull();
+    it('should error on a number', () => {
+      expect(NgxValidators.requiredString(new FormControl(0))).toEqual({ requiredString: true });
     });
 
-    it('should error on an empty array', () => {
-      expect(NgxValidators.requiredString(new FormControl([]))).toEqual({ requiredString: true });
+    it('should error on a array', () => {
+      expect(NgxValidators.requiredString(new FormControl([1, 2]))).toEqual({
+        requiredString: true,
+      });
     });
 
-    it('should not error on a non-empty array', () => {
-      expect(NgxValidators.requiredString(new FormControl([1, 2]))).toBeNull();
-    });
-
-    it('should not error on an empty object', () => {
-      expect(NgxValidators.requiredString(new FormControl({}))).toBeNull();
-    });
-
-    it('should not error on an object containing a length attribute that is zero', () => {
-      expect(
-        NgxValidators.requiredString(new FormControl({ id: 1, length: 0, width: 0 })),
-      ).toBeNull();
+    it('should error on an object', () => {
+      expect(NgxValidators.requiredString(new FormControl({ id: 1 }))).toEqual({
+        requiredString: true,
+      });
     });
 
     it('should error on a string of spaces', () => {
