@@ -52,6 +52,7 @@
     "@angular/router": "^15.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "validator": "^13.9.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -66,6 +67,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@types/jasmine": "~4.3.0",
+    "@types/validator": "^13.7.14",
     "@typescript-eslint/eslint-plugin": "5.48.2",
     "@typescript-eslint/parser": "5.48.2",
     "eslint": "^8.33.0",
