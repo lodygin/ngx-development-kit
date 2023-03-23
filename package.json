@@ -23,7 +23,9 @@
     "let",
     "module",
     "trackBy",
-    "ngFor"
+    "ngFor",
+    "ng",
+    "validator"
   ],
   "workspaces": [
     "dist/ngx-development-kit"
